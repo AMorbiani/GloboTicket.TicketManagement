@@ -4,6 +4,8 @@ using GloboTicket.TicketManagement.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using GloboTicket.TicketManagement.Api.Utility;
+using GloboTicket.TicketManagement.Application.Contracts;
+using GloboTicket.TicketManagement.Api.Services;
 
 namespace GloboTicket.TicketManagement.Api
 {
@@ -16,6 +18,8 @@ namespace GloboTicket.TicketManagement.Api
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddPersistenceServices(builder.Configuration);
+
+            builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
 
             builder.Services.AddHttpContextAccessor();
 

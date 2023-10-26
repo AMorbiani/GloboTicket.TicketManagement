@@ -13,6 +13,7 @@ namespace GloboTicket.TicketManagement.Application.Features.Orders.Queries.GetOr
         public int Size { get; set; }
     }
 
+
     public class GetOrdersForMonthQueryHandler : IRequestHandler<GetOrdersForMonthQuery, PagedOrdersForMonthVm>
     {
         private readonly IOrderRepository _orderRepository;
